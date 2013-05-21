@@ -134,8 +134,9 @@
                 var step = incoming_data.step;
 
                 for (i in incoming_data.data) {
-                    result.push([(start+step*i)*1000, incoming_data.data[i]]);
-
+                    if (incoming_data.data[i] != null) {
+                        result.push([(start+step*i)*1000, incoming_data.data[i]]);
+                    }
                 }
                 return {
                     label: incoming_data.name,
